@@ -18,18 +18,15 @@ h1 {
 .rotating-image {
     width: 200px;
     height: 200px;
-}
-
-.rotating {
     animation: rotation 0.8s infinite linear;
 }
 
 @keyframes rotation {
     from {
-        transform: rotate(0deg);
+        transform: rotate(360deg);
     }
     to {
-        transform: rotate(360deg);
+        transform: rotate(0deg);
     }
 }
 
