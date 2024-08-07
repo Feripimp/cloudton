@@ -119,3 +119,18 @@ payButton.addEventListener('click', async () => {
         alert('Transaction failed.');
     }
 });
+function checkTelegramMembership() {
+    fetch(`https://b7c3d699-a3d9-4f92-b36c-7c52a5f89940-00-3tt5g3ki819gr.janeway.repl.co/check_membership`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.is_member) {
+                startButton.disabled = false;
+                joinMessage.style.display = 'none'; // Hide the join message
+            } else {
+                startButton.disabled = true;
+                joinMessage.style.display = 'block'; // Show the join message
+            }
+        })
+        .catch(error => console.error('Error checking Telegram membership:', error));
+}
+
